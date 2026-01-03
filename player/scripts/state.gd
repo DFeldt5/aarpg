@@ -16,7 +16,7 @@ func Enter() -> void:
 func Exit() -> void:
 	pass
 	
-\
+
 ## What happens when the _process updates in this state
 func Process(_delta: float) -> State:
 	return null
