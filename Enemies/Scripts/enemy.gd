@@ -1,7 +1,7 @@
 class_name Enemy extends CharacterBody2D
 
-signal Direction_Changed(new_direction: Vector2)
-signal Enemy_Damaged()
+signal direction_changed(new_direction: Vector2)
+signal enemy_damaged()
 
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
@@ -20,7 +20,7 @@ var invulnerable: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	enemy_state_machine.Initialize(self)
+	enemy_state_machine.initialize(self)
 	player = PlayerManager.player
 	pass # Replace with function body.
 
@@ -34,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
-func SetDirection(_new_direction) -> bool:
+func set_direction(_new_direction) -> bool:
 	direction = _new_direction
 	if direction == Vector2.ZERO:
 		return false
@@ -51,18 +51,18 @@ func SetDirection(_new_direction) -> bool:
 		return false
 	
 	cardinal_direction = new_direction
-	Direction_Changed.emit(new_direction)
+	direction_changed.emit(new_direction)
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	
 	return true
 
 
-func UpdateAnimation(state: String) -> void:
-	animation_player.play(state + "_" + AnimationDirection())
+func update_animation(state: String) -> void:
+	animation_player.play(state + "_" + animation_direction())
 	pass
 	
 
-func AnimationDirection() -> String:
+func animation_direction() -> String:
 	if cardinal_direction == Vector2.DOWN:
 		return "down"
 	elif cardinal_direction == Vector2.UP:

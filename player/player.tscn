@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://c1knkws3nt6op" path="res://assets/SwordSwoosh.wav" id="8_rgyib"]
 [ext_resource type="Script" uid="uid://ksb83r07bkqj" path="res://player/player_interactions_host.gd" id="10_2ieo8"]
 [ext_resource type="PackedScene" uid="uid://dum13br0si4yw" path="res://generalNodes/hurtbox/hurt_box.tscn" id="10_8t03j"]
-[ext_resource type="Script" uid="uid://vr3b1f6g2pv3" path="res://player/playerCamera.gd" id="11_ebec5"]
+[ext_resource type="Script" uid="uid://vr3b1f6g2pv3" path="res://player/player_camera.gd" id="11_ebec5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 

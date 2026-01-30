@@ -11,24 +11,24 @@ var _timer: float = 0.0
 
 
 ## What happens when we initialize this state
-func Init() -> void:
+func init() -> void:
 	pass
 
 ## What happens when the enemy enters this state
-func Enter() -> void:
+func enter() -> void:
 	enemy.velocity = Vector2.ZERO
 	_timer = randf_range(state_duration_min, state_duration_max)
-	enemy.UpdateAnimation(anim_name)
+	enemy.update_animation(anim_name)
 	pass
 	
 
 ## What happens when the enemy exits this state
-func Exit() -> void:
+func exit() -> void:
 	pass
 	
 
 ## What happens when the _process updates in this state
-func Process(_delta: float) -> EnemyState:
+func process(_delta: float) -> EnemyState:
 	_timer -= _delta
 	if _timer <= 0:
 		return after_idle_state
@@ -37,6 +37,6 @@ func Process(_delta: float) -> EnemyState:
 	
 
 ## What happens when the _physics_process updates in this state
-func Physics(_delta: float) -> EnemyState:
+func physics(_delta: float) -> EnemyState:
 	return null
 	

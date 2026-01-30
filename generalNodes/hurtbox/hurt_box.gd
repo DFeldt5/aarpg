@@ -4,7 +4,7 @@ class_name HurtBox extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	area_entered.connect(AreaEntered)
+	area_entered.connect(entered_check)
 	pass # Replace with function body.
 
 
@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func AreaEntered(a: Area2D) -> void:
+func entered_check(a: Area2D) -> void:
 	if a is HitBox:
-		a.TakeDamage(damage)
+		a.take_damage(damage)
 	pass

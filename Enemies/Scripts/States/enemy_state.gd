@@ -5,25 +5,25 @@ var enemy: Enemy
 var state_machine: EnemyStateMachine
 
 ## What happens when we initialize this state
-func Init() -> void:
+func init() -> void:
 	pass
 
 ## What happens when the enemy enters this state
-func Enter() -> void:
+func enter() -> void:
 	pass
 	
 
 ## What happens when the enemy exits this state
-func Exit() -> void:
+func exit() -> void:
 	pass
 	
 
 ## What happens when the _process updates in this state
-func Process(_delta: float) -> EnemyState:
+func process(_delta: float) -> EnemyState:
 	return null
 	
 
 ## What happens when the _physics_process updates in this state
-func Physics(_delta: float) -> EnemyState:
+func physics(_delta: float) -> EnemyState:
 	return null
 	
